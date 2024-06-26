@@ -1,0 +1,49 @@
+<%- include('./includes/head') %>
+<body>
+    <div class="grid-div">
+        <header>
+            <ul class="home-list">
+                <li><a class="header-link" href="/">Início</a></li>
+            </ul>
+            <ul class="user-list">
+                <li><a class="header-link" href="/signin/logout">Sair</a></li>
+            </ul>
+        </header>
+        <main class="form-main">
+            <div class="form-div">
+                <%- include('./includes/messages/messages') %>
+                <h2>Novo contato</h2>
+                <!-- Estaremos verificando se o id do contato está presente ou não. Caso esteja, iremos chamar nossa rota para editá-lo, caso contrário, iremos chamar a rota para cadastro. -->
+                <% if(contact.id) { %>
+                    <form class="contact-form" action="/contact/edit/<%= contact.id %>" method="post">
+                <% }else{ %>
+                    <form class="contact-form" action="/contact/register" method="post">
+                <% } %>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <div class="name-message"></div>
+                    <div class="input-div">
+                        <label for="name">Nome:</label>
+                        <input value="<%= contact.name %>" type="text" name="name" id="name" required autocomplete="name">
+                    </div>
+                    <div class="input-div">
+                        <label for="lastname">Sobrenome:</label>
+                        <input value="<%= contact.lastname %>" type="lastname" name="lastname" id="lastname" autocomplete="name">
+                    </div>
+                    <div class="input-div">
+                        <label for="number">Telefone:</label>
+                        <input value="<%= contact.number %>" type="number" name="number" id="number" autocomplete="tel">
+                    </div>
+                    <div class="input-div">
+                        <div class="name-message"></div>
+                        <label for="email">Email:</label>
+                        <input value="<%= contact.email %>" type="email" name="email" id="email" autocomplete="email">
+                    </div>
+                    <input class="submit-btn" type="submit" value="Salvar">
+                </form>
+            </div>
+        </main>
+        <%- include('./includes/footer') %>
+    </div>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+.error{
+    padding-top: 3px;
+    color: rgb(216, 73, 73);
+    font-weight: bold;
+}
+
+.success{
+    padding-top: 3px;
+    color: rgb(54, 177, 54);
+    font-weight: bold;
+}
+
+.error-msg{
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(201 53 53 / 30%);
+    color: rgb(196, 60, 60);
+    font-size: 1.1em;
+    outline: 1.5px solid #873f3f;
+}
+
+.success-msg{
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(128 230 128 / 34%);
+    color: rgb(39 118 39);
+    font-size: 1.1em;
+    outline: 1.5px solid #578c57;
+}

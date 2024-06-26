@@ -1,0 +1,90 @@
+.form-main{
+    margin: 0;
+}
+
+.form-div{
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    text-align: center;
+    border-radius: 7px 7px 0 0;
+    background-color: rgb(101 129 101);
+    width: 35%;
+    padding: 20px 0;
+    border: 1.5px solid black;
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+    width: 35%;
+    height: 50%;
+    border-bottom: 1.5px solid black;
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+    border-radius: 0 0 7px 7px;
+    padding: 40px;
+    background-color: rgb(231, 243, 226);
+}
+
+.contact-form{
+    height: 55%;
+}
+
+.input-div{
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 15px 0;
+    height: auto;
+    width: 100%;
+}
+
+label{
+    height: 100%;
+    width: 40%;
+    padding: 7px;
+    background-color: rgb(195 226 195);
+    border-radius: 6px 0 0 6px;
+    font-size: 0.9em;
+    outline: 1px solid black;
+    font-size: 0.9em;
+}
+
+form input{
+    height: 100%;
+    width: 60%;
+    border-radius: 0 6px 6px 0;
+    border: none;
+    padding-left: 10px;
+    font-size: 1em;
+    background-color: rgb(230, 235, 228);
+    outline: 1px solid black;
+}
+
+form input:focus{
+    outline: 1px solid black;
+}
+
+.submit-btn{
+    width: 30%;
+    height: 20%;
+    border-radius: 5px;
+    background-color: rgb(101 129 101);
+    color: white;
+    margin: 10px auto 0 auto;
+    border: none;
+    padding: 6px 0;
+}
+
+.submit-btn:hover{
+    cursor: pointer;
+    outline: 2px solid black;
+}

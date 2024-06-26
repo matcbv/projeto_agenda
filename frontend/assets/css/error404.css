@@ -1,0 +1,22 @@
+.error-div{
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-main{
+    margin: 0;
+}
+
+.error-title{
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.error-div p{
+    font-size: 1.5em;
+    color: rgb(33, 53, 33);
+    padding: 0 30px;
+}

@@ -1,0 +1,5 @@
+node_modules
+.env
+bcryptjs.txt
+metodos_do_mongoose.txt
+metodos_do_express-session.txt

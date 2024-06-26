@@ -1,0 +1,15 @@
+<% if (errorMessages.length > 0) { %>
+    <div class="error-msg">
+        <% errorMessages.forEach(errorMessage => { %>
+            <%= errorMessage %>
+        <% }) %>
+    </div>
+<% } %>
+
+<% if (successMessages.length > 0) { %>
+    <div class="success-msg">
+        <% successMessages.forEach(successMessage => { %>
+            <%= successMessage %>
+        <% }) %>
+    </div>
+<% } %>

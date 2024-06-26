@@ -1,0 +1,48 @@
+<%- include('./includes/head') %>
+<body>
+    <div class="grid-div">
+        <header>
+            <ul class="home-list">
+                <li><a class="header-link" href="/">Início</a></li>
+            </ul>
+            <ul class="user-list">
+                <% if(user) { %>
+                    <li><a class="header-link" href="/logout">Sair</a></li>
+                <% } else{ %>
+                    <li><a class="header-link" href="/signin">Login</a></li>
+                    <li><a class="header-link" href="/signup">Criar conta</a></li>
+                <% } %>
+            </ul>
+        </header>
+        <main class="form-main">
+            <div class="form-div">
+                <%- include('./includes/messages/messages') %>
+                <h2>Login</h2>
+                <form class="login-form" action="/signin/login" method="post">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <%- include('./includes/messages/email') %>
+                    <div class="input-div">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required autocomplete="email">
+                    </div>
+                    <%- include('./includes/messages/password') %>
+                    <div class="input-div">
+                        <label for="password">Senha:</label>
+                        <input type="password" name="password" id="password" required autocomplete="current-password">
+                    </div>
+                    <input class="submit-btn" type="submit" value="Entrar">
+                </form>
+            </div>
+        </main>
+        <footer>
+            <ul class="contacts">
+                <li><a class="footer-link" href="">GitHub</a></li>
+                <li><a class="footer-link" href="">LinkedIn</a></li>
+                <li><a class="footer-link" href="">matheuscbv23@gmail.com</a></li>
+            </ul>
+            <p>Copyright (c) 2024 Matheus Cerqueira</p>
+        </footer>
+    </div>
+    <script src="/assets/js/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+main{
+    grid-area: main;
+    margin-top: 60px
+}
+
+h1{
+    text-align: center;
+    color: rgb(33, 53, 33);
+    font-size: 1.7em;
+}
+
+.index-title{
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+table{
+    width: 90%;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 40px auto;
+    box-shadow: 0px 1px 20px 3px rgba(0, 0, 0, 0.26);
+}
+
+thead{
+    background-color: rgb(67, 150, 67);
+    border: 1px solid black;
+}
+
+thead tr th:last-child{
+    text-align: center;
+}
+
+th{
+    padding: 10px;
+    color: white;
+}
+
+tr{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+td{
+    padding: 10px 11px;
+}
+
+.no-contacts-td{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.actions{
+    text-align: center;
+}
+
+table button{
+    background-color: rgb(170, 212, 170);
+    color: rgb(25, 77, 25);
+    padding: 8px 16px;
+    border-radius: 5px; 
+    border: none;
+} 
+
+table button:hover{
+    animation: change-btn-color 0.3s ease-in-out forwards;
+}
+
+@keyframes change-btn-color {
+    0% {
+        background-color: rgb(170, 212, 170);
+        color: rgb(41, 112, 41);
+    }
+    25% {
+        background-color: rgb(85, 165, 85);
+        color: rgb(56, 134, 56);
+    }
+    50% {
+        background-color: rgb(69, 138, 69);
+        color: rgb(76, 163, 76);
+    }
+    100%{
+        background-color: rgb(61, 122, 57);
+        color: white;
+    }
+}

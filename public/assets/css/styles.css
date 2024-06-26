@@ -1,0 +1,381 @@
+/*!***********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./frontend/assets/css/general.css ***!
+  \***********************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100vw;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: rgb(230, 235, 228);
+}
+
+.grid-div{
+    min-height: 100vh;
+    display: grid;
+    grid-template:  "header" 0.5fr
+                    "main" 6fr
+                    "footer" 1fr
+                    / 100%;
+}
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./frontend/assets/css/header.css ***!
+  \**********************************************************************************/
+header{
+    grid-area: header;
+    display: flex;
+    flex-flow: row nowrap;
+    background-image: linear-gradient(rgb(94, 153, 94), rgb(116, 165, 116));
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+}
+
+header ul {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    font-size: 1em;
+}
+
+.home-list{
+    width: 20%;
+    list-style: none;
+}
+
+.home-list li{
+    height: 100%;
+}
+
+.user-list{
+    width: 80%;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.user-list li {
+    margin-left: 30px;
+    height: 100%;
+}
+
+.header-link{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    text-decoration: none;
+    background-color: rgb(78, 136, 78);
+    color: white;
+    padding: 12px 25px;
+} 
+
+.header-link:hover{
+    animation: change-link-color 0.2s ease-in-out forwards;
+}
+
+@keyframes change-link-color {
+    0% {
+        background-color: rgb(57, 133, 57);
+        color: white;
+    }
+    25% {
+        background-color: rgb(94, 153, 94);
+        color: rgb(125, 170, 125);
+    }
+    50% {
+        background-color: rgb(125, 170, 125);
+        color: rgb(94, 153, 94);
+    }
+    100%{
+        background-color: rgb(201, 223, 198);
+        color: rgb(39, 129, 39);
+    }
+}
+/*!********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./frontend/assets/css/main.css ***!
+  \********************************************************************************/
+main{
+    grid-area: main;
+    margin-top: 60px
+}
+
+h1{
+    text-align: center;
+    color: rgb(33, 53, 33);
+    font-size: 1.7em;
+}
+
+.index-title{
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+table{
+    width: 90%;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 40px auto;
+    box-shadow: 0px 1px 20px 3px rgba(0, 0, 0, 0.26);
+}
+
+thead{
+    background-color: rgb(67, 150, 67);
+    border: 1px solid black;
+}
+
+thead tr th:last-child{
+    text-align: center;
+}
+
+th{
+    padding: 10px;
+    color: white;
+}
+
+tr{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+td{
+    padding: 10px 11px;
+}
+
+.no-contacts-td{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.actions{
+    text-align: center;
+}
+
+table button{
+    background-color: rgb(170, 212, 170);
+    color: rgb(25, 77, 25);
+    padding: 8px 16px;
+    border-radius: 5px; 
+    border: none;
+} 
+
+table button:hover{
+    animation: change-btn-color 0.3s ease-in-out forwards;
+}
+
+@keyframes change-btn-color {
+    0% {
+        background-color: rgb(170, 212, 170);
+        color: rgb(41, 112, 41);
+    }
+    25% {
+        background-color: rgb(85, 165, 85);
+        color: rgb(56, 134, 56);
+    }
+    50% {
+        background-color: rgb(69, 138, 69);
+        color: rgb(76, 163, 76);
+    }
+    100%{
+        background-color: rgb(61, 122, 57);
+        color: white;
+    }
+}
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./frontend/assets/css/footer.css ***!
+  \**********************************************************************************/
+footer{
+    grid-area: footer;
+    background-image: linear-gradient(rgb(116, 165, 116), rgb(94, 153, 94));
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+footer ul{
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    color: rgb(39, 85, 39);
+}
+
+.footer-link{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 2px 0;
+}
+
+.footer-link:hover{
+    text-decoration: underline;
+    color: rgb(39, 85, 39);
+}
+
+footer p{
+    width: 50%;
+    color: white;
+    padding-left: 30px;
+    text-align: right;
+    text-decoration: underline;
+}
+/*!********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./frontend/assets/css/form.css ***!
+  \********************************************************************************/
+.form-main{
+    margin: 0;
+}
+
+.form-div{
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    text-align: center;
+    border-radius: 7px 7px 0 0;
+    background-color: rgb(101 129 101);
+    width: 35%;
+    padding: 20px 0;
+    border: 1.5px solid black;
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+    width: 35%;
+    height: 50%;
+    border-bottom: 1.5px solid black;
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+    border-radius: 0 0 7px 7px;
+    padding: 40px;
+    background-color: rgb(231, 243, 226);
+}
+
+.contact-form{
+    height: 55%;
+}
+
+.input-div{
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 15px 0;
+    height: auto;
+    width: 100%;
+}
+
+label{
+    height: 100%;
+    width: 40%;
+    padding: 7px;
+    background-color: rgb(195 226 195);
+    border-radius: 6px 0 0 6px;
+    font-size: 0.9em;
+    outline: 1px solid black;
+    font-size: 0.9em;
+}
+
+form input{
+    height: 100%;
+    width: 60%;
+    border-radius: 0 6px 6px 0;
+    border: none;
+    padding-left: 10px;
+    font-size: 1em;
+    background-color: rgb(230, 235, 228);
+    outline: 1px solid black;
+}
+
+form input:focus{
+    outline: 1px solid black;
+}
+
+.submit-btn{
+    width: 30%;
+    height: 20%;
+    border-radius: 5px;
+    background-color: rgb(101 129 101);
+    color: white;
+    margin: 10px auto 0 auto;
+    border: none;
+    padding: 6px 0;
+}
+
+.submit-btn:hover{
+    cursor: pointer;
+    outline: 2px solid black;
+}
+/*!************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./frontend/assets/css/error404.css ***!
+  \************************************************************************************/
+.error-div{
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-main{
+    margin: 0;
+}
+
+.error-title{
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.error-div p{
+    font-size: 1.5em;
+    color: rgb(33, 53, 33);
+    padding: 0 30px;
+}
+/*!************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./frontend/assets/css/messages.css ***!
+  \************************************************************************************/
+.error{
+    padding-top: 3px;
+    color: rgb(216, 73, 73);
+    font-weight: bold;
+}
+
+.success{
+    padding-top: 3px;
+    color: rgb(54, 177, 54);
+    font-weight: bold;
+}
+
+.error-msg{
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(201 53 53 / 30%);
+    color: rgb(196, 60, 60);
+    font-size: 1.1em;
+    outline: 1.5px solid #873f3f;
+}
+
+.success-msg{
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(128 230 128 / 34%);
+    color: rgb(39 118 39);
+    font-size: 1.1em;
+    outline: 1.5px solid #578c57;
+}
+
+/*# sourceMappingURL=styles.css.map*/

@@ -1,0 +1,37 @@
+footer{
+    grid-area: footer;
+    background-image: linear-gradient(rgb(116, 165, 116), rgb(94, 153, 94));
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+footer ul{
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    color: rgb(39, 85, 39);
+}
+
+.footer-link{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 2px 0;
+}
+
+.footer-link:hover{
+    text-decoration: underline;
+    color: rgb(39, 85, 39);
+}
+
+footer p{
+    width: 50%;
+    color: white;
+    padding-left: 30px;
+    text-align: right;
+    text-decoration: underline;
+}
