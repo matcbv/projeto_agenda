@@ -31,12 +31,12 @@ form{
     border-left: 1.5px solid black;
     border-right: 1.5px solid black;
     border-radius: 0 0 7px 7px;
-    padding: 40px;
+    padding: 10px 40px 20px 40px;
     background-color: rgb(231, 243, 226);
 }
 
 .contact-form{
-    height: 55%;
+    height: 65%;
 }
 
 .input-div{
@@ -73,18 +73,27 @@ form input:focus{
     outline: 1px solid black;
 }
 
-.submit-btn{
+.form-btn{
     width: 30%;
-    height: 20%;
+    height: auto;
     border-radius: 5px;
     background-color: rgb(101 129 101);
     color: white;
     margin: 10px auto 0 auto;
     border: none;
-    padding: 6px 0;
+    padding: 10px 0;
 }
 
-.submit-btn:hover{
+.form-btn:hover{
     cursor: pointer;
     outline: 2px solid black;
+}
+
+.btn-div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
 }

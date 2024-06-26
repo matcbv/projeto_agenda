@@ -1,3 +1,4 @@
+// Iremos importar nossos estilos a serem interpretados pelo MiniCssExtractPlugin. O caminho deles deve ser relativo ao arquivo atual:
 import './assets/css/general.css';
 import './assets/css/header.css';
 import './assets/css/main.css';

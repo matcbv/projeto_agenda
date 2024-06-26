@@ -15,24 +15,20 @@ exports.signup = (req, res) => {
 // Definindo a rota para register
 exports.register = async (req, res) => {
     try {
-        // Criando uma variável para existência de erros:
-        let errorExists = false
         // Criando uma instância de login, passando o body da requisição para o construtor da classe:
         const register = new Register(req.body)
         // Chamando o método signup:
         await register.signup()
         if (register.emailErrors.length > 0) {
             req.flash('emailErrors', register.emailErrors)
-            errorExists = true
+            return req.session.save(() => res.redirect('/signup'))
         }
         if (register.passwordErrors.length > 0) {
             req.flash('passwordErrors', register.passwordErrors)
-            errorExists = true
+            return req.session.save(() => res.redirect('/signup'))
         }
-        if (errorExists) return req.session.save(() => res.redirect('/signup'))
         // Caso não haja nenhum erro, uma mensagem de sucesso será adicionada:
         req.flash('successMessages', 'Usuário criado com sucesso!')
-        
         return req.session.save(() => res.redirect('/signup'))
     } catch(e) {
         console.log(e)
@@ -43,18 +39,17 @@ exports.register = async (req, res) => {
 // Definindo a rota para login:
 exports.login = async (req, res) => {
     try {
-        let errorExists = false
         const login = new Login(req.body)
         await login.signin()
+        // Abaixo, iremos verificar se algum erro foi adicionado as nossas listas de erro. Caso sim, iremos adicioná-los as flash messages, redirecionando para a página atual novamente.
         if (login.emailErrors.length > 0) {
             req.flash('emailErrors', login.emailErrors)
-            errorExists = true
+            return req.session.save(() => res.redirect('/signin'))
         }
         if (login.passwordErrors.length > 0) {
             req.flash('passwordErrors', login.passwordErrors)
-            errorExists = true
+            return req.session.save(() => res.redirect('/signin'))
         }
-        if (errorExists) return req.session.save(() => res.redirect('/signin'))
         /*
             Abaixo, estaremos armazenando o usuário obtido consultando o banco de dados do Mongo DB. Estaremos armazenado os dados em nossa sessão que também ficará armazenada no banco de dados do Mongo DB. O usuário estará contido em formato de dicionário em pares chave e valor, dentro do dicionário session. Ex.:
 
