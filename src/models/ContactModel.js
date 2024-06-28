@@ -6,8 +6,8 @@ const ContactSchema = new mongoose.Schema({
     // O nome será o unico campo obrigatório:
     name: { type: String, required: true },
     lastname: { type: String, required: false, default: '' },
-    email: { type: String, required: true, default: '' },
-    number: { type: String, required: true, default: '' },
+    email: { type: String, required: false, default: '' },
+    number: { type: String, required: false, default: '' },
     // Iremos adicionar um campo de forma implícita informando a hora que o contato foi cadastrado:
     data: {type: Date, default: Date.now()}
 });

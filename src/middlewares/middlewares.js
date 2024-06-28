@@ -12,13 +12,14 @@ exports.csrfMiddleware = (req, res, next) => {
 }
 
 exports.globalMiddleware = (req, res, next) => {
-   res.locals.errorMessages = req.flash('errorMessages')
-   res.locals.successMessages = req.flash('successMessages')
-   res.locals.emailErrors = req.flash('emailErrors')
-   res.locals.passwordErrors = req.flash('passwordErrors')
-   res.locals.nameErrors = req.flash('nameErrors')
-   res.locals.user = req.session.user
-   next()
+    // Tornando disponíveis através de locals, as mensagens flash para exibirmos em nossas views:
+    res.locals.errorMessages = req.flash('errorMessages')
+    res.locals.successMessages = req.flash('successMessages')
+    res.locals.emailErrors = req.flash('emailErrors')
+    res.locals.passwordErrors = req.flash('passwordErrors')
+    res.locals.nameErrors = req.flash('nameErrors')
+    res.locals.user = req.session.user
+    next()
 }
 
 exports.loginRequired = (req, res, next) => {

@@ -137,6 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_css_form_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/css/form.css */ "./frontend/assets/css/form.css");
 /* harmony import */ var _assets_css_error404_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/css/error404.css */ "./frontend/assets/css/error404.css");
 /* harmony import */ var _assets_css_messages_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/css/messages.css */ "./frontend/assets/css/messages.css");
+// Iremos importar nossos estilos a serem interpretados pelo MiniCssExtractPlugin. O caminho deles deve ser relativo ao arquivo atual:
 
 
 

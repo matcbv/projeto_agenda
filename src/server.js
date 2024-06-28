@@ -49,6 +49,7 @@ app.use(helmet())
 const csrf = require('csurf')
 app.use(csrf())
 
+// Os middlewares globais são executados em toda requisição feita na aplicação, seja ela GET, POST, PUT, DELETE, etc.
 const { csrfMiddleware, checkCsrfError, globalMiddleware } = require('./middlewares/middlewares')
 app.use(csrfMiddleware)
 app.use(checkCsrfError)
