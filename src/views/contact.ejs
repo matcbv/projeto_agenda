@@ -29,14 +29,15 @@
                         <label for="lastname">Sobrenome:</label>
                         <input value="<%= contact.lastname %>" type="lastname" name="lastname" id="lastname" autocomplete="name">
                     </div>
-                    <div class="input-div">
-                        <label for="number">Telefone:</label>
-                        <input value="<%= contact.number %>" type="number" name="number" id="number" autocomplete="tel">
-                    </div>
+                    <%- include('./includes/messages/email') %>
                     <div class="input-div">
                         <div class="name-message"></div>
                         <label for="email">Email:</label>
                         <input value="<%= contact.email %>" type="email" name="email" id="email" autocomplete="email">
+                    </div>
+                    <div class="input-div">
+                        <label for="number">Telefone:</label>
+                        <input value="<%= contact.number %>" type="number" name="number" id="number" autocomplete="tel">
                     </div>
                     <div class="btn-div">
                         <input class="form-btn" type="submit" value="Salvar">
