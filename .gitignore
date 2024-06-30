@@ -1,7 +1,7 @@
-node_modules
 .env
+node_modules
 bcryptjs.txt
+propriedade_output.txt
 metodos_do_mongoose.txt
+trabalhando_com_MiniCss.txt
 metodos_do_express-session.txt
-trabalhando_com_MiniCssExtractPlugin.txt
-propriedade_output_(webpack).txt
