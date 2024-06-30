@@ -16,12 +16,12 @@
                 <h2>Cadastro</h2>
                 <form class="register-form" action="/signup/register" method="post">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                    <%- include('./includes/messages/email') %>
+                    <div class="email-message error"><%- include('./includes/messages/email') %></div>
                     <div class="input-div">
                         <label for="email">Email:</label>
                         <input type="email" name="email" id="email" required autocomplete="email">
                     </div>
-                    <%- include('./includes/messages/password') %>
+                    <div class="password-message error"><%- include('./includes/messages/password') %></div>
                     <div class="input-div">
                         <label for="password">Senha:</label>
                         <input type="password" name="password" id="password" required autocomplete="new-password">

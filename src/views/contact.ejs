@@ -20,6 +20,7 @@
                     <form class="contact-form" action="/contact/register" method="post">
                 <% } %>
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <div class="name-message error"><%- include('./includes/messages/name') %></div>
                     <div class="input-div">
                         <label for="name">Nome:</label>
                         <input value="<%= contact.name %>" type="text" name="name" id="name" required autocomplete="name">
@@ -28,7 +29,7 @@
                         <label for="lastname">Sobrenome:</label>
                         <input value="<%= contact.lastname %>" type="lastname" name="lastname" id="lastname" autocomplete="name">
                     </div>
-                    <%- include('./includes/messages/email') %>
+                    <div class="email-message error"><%- include('./includes/messages/email') %></div>
                     <div class="input-div">
                         <label for="email">Email:</label>
                         <input value="<%= contact.email %>" type="email" name="email" id="email" autocomplete="email">

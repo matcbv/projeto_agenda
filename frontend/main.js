@@ -7,27 +7,29 @@ import './assets/css/form.css';
 import './assets/css/error404.css';
 import './assets/css/messages.css';
 
-// import Validator from './models/FormValidator'
+import Validator from './models/FormValidator'
 
-// const registerForm = document.querySelector('.register-form')
-// const loginForm = document.querySelector('.login-form')
-// const emailMsg = document.querySelector('.email-message')
-// const passwordMsg = document.querySelector('.password-message')
+const registerForm = document.querySelector('.register-form')
+const loginForm = document.querySelector('.login-form')
 
-// registerForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     const validator = new Validator(e.target, emailMsg, passwordMsg);
-//     validator.checkRegister()
-//     if (validator.errors === 0){
-//         e.target.submit()
-//     } else return
-// })
+if (registerForm) {
+    registerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const validator = new Validator(e.target);
+        validator.checkRegister()
+        if (validator.errors === 0){
+            e.target.submit()
+        } else return
+    })
+}
 
-// loginForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     const validator = new Validator(e.target, emailMsg, passwordMsg);
-//     validator.checkLogin()
-//     if (validator.errors === 0){
-//         e.target.submit()
-//     } else return
-// })
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const validator = new Validator(e.target);
+        validator.checkLogin()
+        if (validator.errors === 0){
+            e.target.submit()
+        } else return
+    })
+}

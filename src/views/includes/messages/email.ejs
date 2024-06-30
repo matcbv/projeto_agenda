@@ -1,7 +1,7 @@
 <% if (emailErrors.length > 0) { %>
-    <div class="error">
+    <span class="error">
         <% emailErrors.forEach(emailError => { %>
             <%= emailError %>
         <% }) %>
-    </div>
+    </span>
 <% } %>

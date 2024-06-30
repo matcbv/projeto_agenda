@@ -356,15 +356,18 @@ form input:focus{
   !*** css ./node_modules/css-loader/dist/cjs.js!./frontend/assets/css/messages.css ***!
   \************************************************************************************/
 .error{
-    padding-top: 3px;
     color: rgb(216, 73, 73);
     font-weight: bold;
 }
 
 .success{
-    padding-top: 3px;
     color: rgb(54, 177, 54);
     font-weight: bold;
+}
+
+.email-message span, .password-message span, .name-message span{
+    display: inline-block;
+    margin-top: 6px;
 }
 
 .error-msg{

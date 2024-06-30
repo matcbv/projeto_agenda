@@ -43,11 +43,11 @@ exports.edit = async (req, res) => {
         const contact = new Contact(req.body)
         await contact.edit(req.params.id)
         if (contact.nameErrors.length > 0) {
-            req.flash('emailErrors', contact.emailErrors)
+            req.flash('nameErrors', contact.nameErrors)
             return req.session.save(() => res.redirect('/contact'))
         }
         if (contact.emailErrors.length > 0) {
-            req.flash('passwordErrors', contact.passwordErrors)
+            req.flash('emailErrors', contact.emailErrors)
             return req.session.save(() => res.redirect('/contact'))
         }
         req.flash('successMessages', 'Contato editado com sucesso!')

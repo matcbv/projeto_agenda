@@ -1,0 +1,7 @@
+<% if( nameErrors.length > 0) { %>
+    <span class="error">
+        <% nameErrors.forEach(nameError => { %>
+            <%= nameError %>
+        <% }) %>
+    </span>
+<% } %>

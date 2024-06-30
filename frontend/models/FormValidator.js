@@ -1,12 +1,15 @@
 export default class Validator {
-    constructor(body, emailMsg, passwordMsg) {
+    constructor(body) {
+        this.emailMsg = document.querySelector('.email-message')
+        this.passwordMsg = document.querySelector('.password-message')
         this.body = body;
-        this.emailMsg = emailMsg;
-        this.passwordMsg = passwordMsg;
         this.errors = 0;
     }
 
-    checkRegister() { 
+    checkRegister() {
+        this.emailMsg.innerText = '';
+        this.passwordMsg.innerText = '';
+
         if (!this.body.querySelector('#email').value){
             this.emailMsg.innerText = 'Email é obrigatório.'
             this.errors++;
@@ -26,6 +29,9 @@ export default class Validator {
     }
 
     checkLogin() {
+        this.emailMsg.innerText = '';
+        this.passwordMsg.innerText = '';
+
         if (!this.body.querySelector('#email').value){
             this.emailMsg.innerText = 'Email é obrigatório.'
             this.errors++;
