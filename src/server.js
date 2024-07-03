@@ -11,8 +11,10 @@ app.use(express.static(path.resolve(__dirname, '..', 'public')))
 const mongoose = require('mongoose')
 mongoose.connect(process.env.CONNECTIONSTRING)
     .then(() => {
+        console.log('Conectado ao MongoDB.')
         app.emit('ready');
     }).catch(e => {
+        console.log('Não foi possível conectar ao MongoDB.')
         console.log(e)
     })
 

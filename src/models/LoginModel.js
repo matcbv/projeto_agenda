@@ -1,18 +1,8 @@
-// Criando nosso modelo para login do usuário:
-
-const mongoose = require('mongoose');
+// Importando o model Register, que contém os usuários registrados em nosso banco de dados: 
+const {RegisterModel} = require('./RegisterModel');
 // O pacote validator é responsável por nos fornecer uma maneira simples e eficiente de verificar nossos dados. Com ele, podemos validar tipos de dados, seus formatos, e até mesmo definir uma lista de dados permitidos ou valor mínimo e máximo.
 const validator  = require('validator')
 const bcryptjs = require('bcryptjs')
-
-// Schema do nosso login:
-const LoginSchema = new mongoose.Schema({
-    email: { type: String, required: true },
-    password: { type: String, required: true },
-});
-
-//Criando o modelo de login:
-const LoginModel = mongoose.model('Login', LoginSchema);
 
 // Com a classe login, iremos realizar a validação dos nossos dados.
 class Login{
@@ -37,27 +27,16 @@ class Login{
 
         // Abaixo, estaremos redefinindo nosso body para garantir que contenha somente as duas propriedades que desejamos:
         this.body = {
-            email: this.body.email,
+            email: this.body.email.toLowerCase(),
             password: this.body.password
         }
     };
-
-    userExists() {
-        // Com o método findOne, conseguimos encontrar um documento de um usuário através de um número de critérios informados através de um objeto passado por parâmetro.
-        LoginModel.findOne({ email: this.body.email })
-        .then(user => {
-            // Caso algum usuário tenha sido encontrado, iremos adicionar uma mensagem de erro à lista de erros.
-            if (user) {
-                this.emailErrors.push('Usuário já existente.')
-            }
-        })
-    }
 
     async signin() {
         this.validation()
         if (this.emailErrors.length > 0 || this.passwordErrors.length > 0) return;
         // Obtendo o usuário através do email informando no formulário:
-        this.user = await LoginModel.findOne({ email: this.body.email })
+        this.user = await RegisterModel.findOne({ email: this.body.email })
         // Caso nada seja obtido, iremos adicionar um erro em nossa lista:
         if (!this.user) {
             this.emailErrors.push('Usuário inexistente.');

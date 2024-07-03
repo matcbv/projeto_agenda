@@ -6,7 +6,7 @@ const validator  = require('validator')
 const bcryptjs = require('bcryptjs')
 
 const RegisterSchema = new mongoose.Schema({
-    email: { type: String, required: true },
+    email: { type: String, required: true, unique: true, lowercase: true },
     password: { type: String, required: true }
 });
 
@@ -27,16 +27,18 @@ class Register{
             }
         }
         this.body = {
-            email: this.body.email,
+            email: this.body.email.toLowerCase(),
             password: this.body.password
         }
     };
 
     userExists() {
+        // Com o método findOne, conseguimos encontrar um documento de um usuário através de um número de critérios informados através de um objeto passado por parâmetro.
         RegisterModel.findOne({ email: this.body.email })
         .then(user => {
+            // Caso algum usuário tenha sido encontrado, iremos adicionar uma mensagem de erro à lista de erros.
             if (user) {
-                this.emailErrors.push('Usuário existente!')
+                this.emailErrors.push('Usuário já existente.')
             }
         })
     }
@@ -75,4 +77,4 @@ class Register{
     };
 }
 
-module.exports = {Register};
+module.exports = {Register, RegisterModel};
