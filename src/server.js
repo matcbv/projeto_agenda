@@ -65,7 +65,13 @@ const routes = require('./routes')
 app.use(routes)
 
 app.on('ready', () => {
-    app.listen(process.env.SERVERPORT, () => {
-        console.log(`Servidor acessado com sucesso na porta ${process.env.SERVERPORT}`)
+    app.listen(8080, () => {
+        console.log(`Servidor acessado com sucesso na porta 8080`)
     })
 })
+
+// app.on('ready', () => {
+//     app.listen(process.env.SERVERPORT, () => {
+//         console.log(`Servidor acessado com sucesso na porta ${process.env.SERVERPORT}`)
+//     })
+// })
