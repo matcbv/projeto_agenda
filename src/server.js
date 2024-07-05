@@ -42,8 +42,8 @@ app.use(sessionOptions)
 const flash = require('connect-flash')
 app.use(flash())
 
-// const helmet = require('helmet')
-// app.use(helmet())
+const helmet = require('helmet')
+app.use(helmet())
 
 // const cookieParser = require('cookie-parser')
 // app.use(cookieParser())
