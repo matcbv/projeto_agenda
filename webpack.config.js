@@ -6,8 +6,7 @@ module.exports = {
     entry: "./frontend/main.js",
     output: {
         path: path.resolve(__dirname, 'public', 'assets'),
-        filename: "js/bundle.js",
-        publicPath: "/assets/"
+        filename: "js/bundle.js"
     }, 
     module: {
         rules: [
@@ -24,7 +23,8 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [{loader: MiniCssExtractPlugin.loader}, "css-loader"]
-            }]
+            }
+        ]
     },
     plugins: [new MiniCssExtractPlugin({
         filename: "css/styles.css"
