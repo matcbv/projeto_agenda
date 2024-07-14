@@ -56,7 +56,7 @@ class Register{
 
             Por fim, ainda teremos métodos para manipulação do documento como save e remove. 
         */
-        // Gerando um salt para ser utilizado no hsh:
+        // Gerando um salt para ser utilizado no hash:
         const salt = bcryptjs.genSaltSync();
         // Gerando um hash para a senha com o salt:
         const hash = bcryptjs.hashSync(this.body.password, salt);
