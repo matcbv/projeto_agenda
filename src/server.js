@@ -6,7 +6,7 @@ const express = require('express')
 const app = express()
 
 app.use(express.urlencoded({extended: true}))
-app.use(express.static(path.resolve(__dirname, '..', 'public')))
+app.use(express.static(path.resolve(__dirname, '..', 'public', 'assets')))
 
 const mongoose = require('mongoose')
 mongoose.connect(process.env.CONNECTIONSTRING)
@@ -21,7 +21,7 @@ mongoose.connect(process.env.CONNECTIONSTRING)
 let randomSecret = ''
 for (let i = 0; i <= 60; i++) {
     const randInt = Math.floor(Math.random() * 95) + 32
-    randomSecret += String.fromCharCode(randInt) 
+    randomSecret += String.fromCharCode(randInt)
 }
 
 const session = require('express-session')
@@ -52,7 +52,7 @@ const csrf = require('csurf')
 app.use(csrf())
 
 // Os middlewares globais são executados em toda requisição feita na aplicação, seja ela GET, POST, PUT, DELETE, etc.
-const { csrfMiddleware, checkCsrfError, globalMiddleware } = require('./middlewares/middlewares')
+const { csrfMiddleware, checkCsrfError, globalMiddleware } = require(path.resolve(__dirname, 'middlewares', 'middlewares.js'))
 app.use(csrfMiddleware)
 app.use(checkCsrfError)
 app.use(globalMiddleware)
@@ -61,7 +61,7 @@ app.set('views', path.resolve(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 // Obs.: A aplicação das rotas devem vir após os middlewares globais, para que possam obter qualquer informação necessária para a aplicação das rotas.
-const routes = require('./routes')
+const routes = require(path.resolve(__dirname, 'routes.js'))
 app.use(routes)
 
 app.on('ready', () => {
